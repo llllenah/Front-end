@@ -1,9 +1,5 @@
 function dynamicSort(propName, order) {
-    let sortOrder = 1;
-    if (order == false) {
-      sortOrder = -1;
-      propName = propName.substr(1);
-    } 
+    let sortOrder =  (order == false) ? -1: 1; 
 
     return function (a, b) {
       let result;
@@ -25,5 +21,5 @@ const contacts = [
     { name: 'Peter', phoneNumber: '098-54-54-652', },
     { name: 'Ann', phoneNumber: '050-711-21-21', },
 ];
-contacts.sort(dynamicSort('name', false));
+contacts.sort(dynamicSort('name', true));
 console.log(contacts);
